@@ -1,6 +1,12 @@
 install-windowsfeature AD-Domain-Services
 Import-Module ADDSDeployment
 
+
+$hostName =  $env:COMPUTERNAME
+$memberName = $hostName + "$"
+ADD-ADGroupMember “containerhost” –members $memberName
+
+
 Install-AdServiceAccount EU-SVC
 Install-AdServiceAccount DH-SVC
 
