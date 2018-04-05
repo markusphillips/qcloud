@@ -4,7 +4,7 @@ Import-Module ADDSDeployment
 
 $hostName =  $env:COMPUTERNAME
 $memberName = $hostName + "$"
-ADD-ADGroupMember “containerhost” –members $memberName
+ADD-ADGroupMember "containerhost" -members $memberName
 
 
 Install-AdServiceAccount EU-SVC
